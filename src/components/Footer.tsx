@@ -1,134 +1,56 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company Info */}
+    <footer className="bg-green-500 text-white">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center mb-6">
-              <span className="text-brand-green font-bold text-2xl">DREAM</span>
-              <span className="ml-1 text-black font-bold text-2xl">CAR</span>
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src="/images/logofooter.png"
+                alt="Dream Car Services"
+                className="h-30"
+              />
             </div>
-            <p className="text-gray-600 mb-6">
-              Experience the joy of driving with our premium car dealership. We offer the best cars with exceptional service.
+            <p className="text-sm">Your trusted partner in finding the perfect car.</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="hover:underline">Home</Link></li>
+              <li><Link to="/cars" className="hover:underline">Cars</Link></li>
+              <li><Link to="/TestimonialsScreen" className="hover:underline">Testimonials</Link></li>
+              <li><Link to="/about" className="hover:underline">About</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-4">Customer Support</h3>
+            <ul className="space-y-2">
+              <li><Link to="/faqs" className="hover:underline">FAQs</Link></li>
+              <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+              <li><Link to="/TermsScreen" className="hover:underline">Terms & Conditions</Link></li>
+              <li><Link to="/support-center" className="hover:underline">Support Center</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-4">Address</h3>
+            <p className="text-sm">
+              123 Car Street<br />
+              Automobile City<br />
+              State, Country<br />
+              PIN: 123456
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-green hover:text-white transition-all"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-green hover:text-white transition-all"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-green hover:text-white transition-all"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-green hover:text-white transition-all"
-              >
-                <Youtube size={18} />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Home', 'About Us', 'Cars', 'Services', 'Contact Us'].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-gray-600 hover:text-brand-green transition-colors flex items-center"
-                  >
-                    <ChevronRight size={16} className="mr-2" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin size={20} className="text-brand-green mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-600">
-                  123 Car Street, Automobile City, AC 12345, India
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={20} className="text-brand-green mr-3 flex-shrink-0" />
-                <span className="text-gray-600">+91 98765 43210</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={20} className="text-brand-green mr-3 flex-shrink-0" />
-                <span className="text-gray-600">info@dreamcar.com</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Working Hours */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Working Hours</h3>
-            <ul className="space-y-3">
-              <li className="flex justify-between">
-                <span className="text-gray-600">Monday - Friday:</span>
-                <span className="font-medium">9:00 AM - 8:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-gray-600">Saturday:</span>
-                <span className="font-medium">9:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-gray-600">Sunday:</span>
-                <span className="font-medium">10:00 AM - 4:00 PM</span>
-              </li>
-            </ul>
-            <div className="mt-6 p-4 bg-brand-lightGreen rounded-lg border border-brand-green border-opacity-30">
-              <p className="text-brand-green font-medium">
-                24/7 Emergency Roadside Assistance Available
-              </p>
-            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Dream Car. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link to="/terms" className="text-sm text-gray-600 hover:text-brand-green transition-colors">
-                Terms & Conditions
-              </Link>
-              <Link to="/privacy" className="text-sm text-gray-600 hover:text-brand-green transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/cookies" className="text-sm text-gray-600 hover:text-brand-green transition-colors">
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
+        <div className="mt-8 pt-8 border-t border-green-400 text-center">
+          <p>&copy; {new Date().getFullYear()} Dream Cars. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -136,3 +58,65 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+// import React from 'react';
+// import { Car } from 'lucide-react';
+
+// const Footer = () => {
+//   return (
+//     <footer className="bg-green-500 text-white">
+//       <div className="container mx-auto px-4 py-8">
+//         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+//           <div>
+//             <div className="flex items-center gap-2 mb-4">
+//               <img
+//             src="/images/logofooter.png"
+//             alt="Dream Car Services"
+//             className="h-30"
+//           />
+//             </div>
+//             <p className="text-sm">Your trusted partner in finding the perfect car.</p>
+//           </div>
+          
+//           <div>
+//             <h3 className="font-bold mb-4">Quick Links</h3>
+//             <ul className="space-y-2">
+//               <li><a href="#" className="hover:underline">Home</a></li>
+//               <li><a href="/cars" className="hover:underline">Cars</a></li>
+//             <li><a href="/TestimonialScreen" className="hover:underline">Testimonials</a></li>
+//               <li><a href="#" className="hover:underline">About</a></li>
+//               <li><a href="#" className="hover:underline">Contact</a></li>
+//             </ul>
+//           </div>
+
+//           <div>
+//             <h3 className="font-bold mb-4">Customer Support</h3>
+//             <ul className="space-y-2">
+//               <li><a href="#" className="hover:underline">FAQs</a></li>
+//               <li><a href="/privacy-policy" className="hover:underline">Privacy Policy</a></li>
+//               <li><a href="/TermsScreen" className="hover:underline">Terms & Conditions</a></li>
+//               <li><a href="#" className="hover:underline">Support Center</a></li>
+//             </ul>
+//           </div>
+
+//           <div>
+//             <h3 className="font-bold mb-4">Address</h3>
+//             <p className="text-sm">
+//               123 Car Street<br />
+//               Automobile City<br />
+//               State, Country<br />
+//               PIN: 123456
+//             </p>
+//           </div>
+//         </div>
+        
+//         <div className="mt-8 pt-8 border-t border-green-400 text-center">
+//           <p>&copy; {new Date().getFullYear()} Dream Cars. All rights reserved.</p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
