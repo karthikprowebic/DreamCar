@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsScreen from "./pages/TermsScreen";
 import TestimonialsScreen from "./pages/TestimonialsScreen";
+import CarDetails from "./pages/CarDetails";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="TermsScreen" element={<TermsScreen />} />
             <Route path="/TestimonialsScreen" element={<TestimonialsScreen />} />
+            <Route path="/CarDetails" element={<CarDetails />} />
           </Routes>
         </main>
         <Footer />
